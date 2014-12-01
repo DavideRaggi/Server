@@ -5444,7 +5444,7 @@ bool CHARACTER::DropItem(TItemPos Cell, BYTE bCount)
 
 bool CHARACTER::DropGold(int gold)
 {
-	if (!drop_gold_enable)
+	if (drop_gold_enable != 0)
 		return false;
 	
 	if (gold <= 0 || gold > GetGold())
